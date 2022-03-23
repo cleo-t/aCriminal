@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float mouseSensitivity = 100.0f;
+    public float minPitch = -10;
+    public float maxPitch = 80;
     float pitch = 0;
     float yaw = 0;
     Transform playerBody;
@@ -29,7 +31,7 @@ public class CameraMovement : MonoBehaviour
 
         // pitch
         pitch -= moveY;
-        pitch = Mathf.Clamp(pitch, -90f, 90f);
+        pitch = Mathf.Clamp(pitch, this.minPitch, this.maxPitch);
         transform.localRotation = Quaternion.Euler(pitch, 0, 0);
         //Debug.Log(yaw + ", " + pitch);
     }
