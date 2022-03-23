@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 973680214}
   - component: {fileID: 973680213}
   - component: {fileID: 973680212}
+  - component: {fileID: 973680215}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -312,6 +313,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973680210}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &973680215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973680210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00b1b2210da69b409894cc5600361c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowSpeed: 0.001
+  flowDirection: {x: 1, y: 0}
 --- !u!1 &1098065991
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1267819507546769105, guid: d8c7c15cbc45b9444af6f5710cb2009e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19689083
+      value: 1.6968908
       objectReference: {fileID: 0}
     - target: {fileID: 1267819507546769105, guid: d8c7c15cbc45b9444af6f5710cb2009e, type: 3}
       propertyPath: m_LocalPosition.z
