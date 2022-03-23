@@ -1434,6 +1434,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332141306}
   m_Mesh: {fileID: -4181559681751823598, guid: 8475a4a0a7ac1e3438a99992a7f799bd, type: 3}
+--- !u!1 &387435820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387435823}
+  - component: {fileID: 387435822}
+  - component: {fileID: 387435821}
+  m_Layer: 0
+  m_Name: Box Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &387435821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387435820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: fc485901b1f3440d49814cd4823a4287, type: 2}
+--- !u!65 &387435822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387435820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &387435823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387435820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.39, y: 7.23, z: 8.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438083056
 GameObject:
   m_ObjectHideFlags: 0
@@ -6764,58 +6826,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4618687392808457895, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.8773585
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687392808457895, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.80306286
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687392808457895, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.75734246
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393134340637, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.30588236
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393134340637, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.9528302
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393134340637, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8789923
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393134340637, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.8494571
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393319859634, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.764151
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393319859634, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.71282995
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393319859634, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.68124783
-      objectReference: {fileID: 0}
     - target: {fileID: 4618687393572601572, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
       propertyPath: m_Name
       value: Rain
       objectReference: {fileID: 0}
-    - target: {fileID: 4618687393572601573, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: m_Volume
-      value: 0.325
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618687393572601573, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a901ce2147c5465cb47214ae277ebc1, type: 3}
     - target: {fileID: 4618687393572601578, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -6861,12 +6875,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618687394132912041, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.16862746
+      propertyPath: TriggerModule.enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4618687394132912046, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20.6
+    - target: {fileID: 4618687394132912041, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618687394132912041, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618687394132912041, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c255f0ca3222c4ee5b6b509e712f6e27, type: 3}
