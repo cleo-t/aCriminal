@@ -31,7 +31,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.88
+    m_Value: 1.26
     min: 0
   intensity:
     m_OverrideState: 1
@@ -229,8 +229,8 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.10067114
-          value: 0.07913667
+          time: 0.44630873
+          value: 0.10791367
           inSlope: 0
           outSlope: 0
           tangentMode: 0
