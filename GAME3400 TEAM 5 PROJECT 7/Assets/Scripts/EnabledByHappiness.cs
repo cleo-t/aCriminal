@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnableByHappiness : MonoBehaviour
+public class EnabledByHappiness : MonoBehaviour
 {
     [SerializeField]
     private bool enableWhenMatching = true;
