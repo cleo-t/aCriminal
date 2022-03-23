@@ -39,6 +39,7 @@ public class WorldStateManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         } else
         {
             Destroy(this);
