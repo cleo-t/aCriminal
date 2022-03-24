@@ -38,6 +38,7 @@ public class WorldStateManager : MonoBehaviour
 
     [SerializeField]
     public List<GameObject> weathers;
+    public GameObject[] villagers;
 
     public int i = 0;
 
@@ -86,5 +87,73 @@ public class WorldStateManager : MonoBehaviour
     {
         this.currentTownHappiness++;
         this.currentTownHappiness %= maxTownHappiness + 1;
+        IncrementVillagerHappiness();
+    }
+
+    private void IncrementVillagerHappiness()
+    {
+        switch(currentTownHappiness)
+        {
+            case 0:
+                for (int i = 0; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Fear;
+                break;
+            case 1:
+                for (int i = 0; i < villagers.Length / 4; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                for (int i = villagers.Length / 4 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Fear;
+                break;
+            case 2:
+                for (int i = 0; i < villagers.Length / 3; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                for (int i = villagers.Length / 3 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Fear;
+                break;
+            case 3:
+                for (int i = 0; i < villagers.Length / 2; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Fear;
+                for (int i = villagers.Length / 2 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 4:
+                for (int i = 0; i < villagers.Length / 3; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Fear;
+                for (int i = villagers.Length / 3 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 5:
+                for (int i = 0; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 6:
+                for (int i = 0; i < villagers.Length / 4; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Happy;
+                for (int i = villagers.Length / 4 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 7:
+                for (int i = 0; i < villagers.Length / 3; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Happy;
+                for (int i = villagers.Length / 3 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 8:
+                for (int i = 0; i < villagers.Length / 2; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Happy;
+                for (int i = villagers.Length / 2 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                break;
+            case 9:
+                for (int i = 0; i < villagers.Length / 3; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Neutral;
+                for (int i = villagers.Length / 3 + 1; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Happy;
+                break;
+            case 10:
+                for (int i = 0; i < villagers.Length; i++)
+                    villagers[i].GetComponent<NPCBehavior>().state = NPCBehavior.NPCState.Happy;
+                break;
+        }
     }
 }

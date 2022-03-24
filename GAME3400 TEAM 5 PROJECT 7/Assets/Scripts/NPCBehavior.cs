@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class NPCBehavior : MonoBehaviour
 {
-    public enum NPCType {
-        Adult = 0,
-        Child = 1
-    }
     public enum NPCState
     {
         Fear = 0,
@@ -15,14 +11,16 @@ public class NPCBehavior : MonoBehaviour
         Happy = 2
     }
 
-    public NPCType type;
     public GameObject player;
     public GameObject[] wanderPoints;
-    public float reactionDistance = 10;
+    public GameObject[] townSquare;
+    public float reactionDistance = 2;
 
-    NPCState state;
+    public NPCState state;
     float deviation = 2;
-
+    int currentWanderPoint = 0;
+    int currentTownSquarePoint = 0;
+    int speed = 2;
 
     void Start()
     {
@@ -33,42 +31,51 @@ public class NPCBehavior : MonoBehaviour
     
     void Update()
     {
-        // Walk between wanderpoints
-
-
-
-        // Adults
-        if (type == NPCType.Adult)
+        if (state == NPCState.Happy)
         {
-            
-
+            // Walk between wanderpoints
+            if (Vector3.Distance(transform.position, townSquare[currentTownSquarePoint].transform.position) <= deviateValue(deviation))
+            {
+                currentTownSquarePoint++;
+                currentTownSquarePoint %= townSquare.Length;
+            }
+            else
+            {
+                Vector3 temp = townSquare[currentTownSquarePoint].transform.position;
+                temp.y = transform.position.y;
+                transform.position = Vector3.MoveTowards(transform.position, temp, speed * Time.deltaTime);
+            }
+            return;
         }
-        // Children
+
+        // Check for if the player is in line of sight
+        RaycastHit hit;
+        if (state != NPCState.Neutral && Physics.Raycast(transform.position, transform.position - player.transform.position, out hit, reactionDistance))
+        {
+            // If they are afraid. Stare at the player and back away
+            Vector3 temp = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            transform.LookAt(temp);
+            transform.position = Vector3.MoveTowards(transform.position, temp, -0.02f);
+        }
         else
         {
-
+            // Walk between wanderpoints
+            if (Vector3.Distance(transform.position, wanderPoints[currentWanderPoint].transform.position) <= deviateValue(deviation))
+            {
+                currentWanderPoint++;
+                currentWanderPoint %= wanderPoints.Length;
+            }
+            else
+            {
+                Vector3 temp = wanderPoints[currentWanderPoint].transform.position;
+                temp.y = transform.position.y;
+                transform.position = Vector3.MoveTowards(transform.position, temp, speed * Time.deltaTime);
+            }
         }
-
-        
-        // If it can see the player and is fearful, stare
-            // If the player is within the reaction distance, back away
-        // If it can see the player and is neautral keep walking
-        // If it can see the player and is happy, jump once
-            // If the player is within the reaction distance, jump multiple times and spin in a circle
-
-        
-        // If it can see the player and is fearful, stare
-            // If the player is within the reaction distance, run away
-        // If it can see the playre and is neautral keep walking
-        // If it can see the player and is happy, run to them
-            // If the player is within the reaction distance, stop moving and jump multiple times
     }
-
 
     float deviateValue(float value)
     {
         return (float)Random.Range(value - deviation, value + deviation);
     }
-
-    
 }
