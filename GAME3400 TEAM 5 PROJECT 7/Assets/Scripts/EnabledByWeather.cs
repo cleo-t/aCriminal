@@ -21,6 +21,7 @@ public class EnabledByWeather : MonoBehaviour
 
     private void Refresh()
     {
+        /*
         foreach(WorldStateManager.WeatherState ws in this.weatherConditions)
         {
             if (WorldStateManager.weather == ws)
@@ -29,5 +30,6 @@ public class EnabledByWeather : MonoBehaviour
             }
         }
         this.gameObject.SetActive(!this.enableWhenMatching);
+        */
     }
 }

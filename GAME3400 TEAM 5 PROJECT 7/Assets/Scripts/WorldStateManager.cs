@@ -13,11 +13,12 @@ public class WorldStateManager : MonoBehaviour
         Rainy,
         Cloudy
     }
-    private WeatherState currentWeather;
+    //private WeatherState currentWeather;
 
     private static int maxTownHappiness = 10;
     private int currentTownHappiness;
 
+    /*
     public static WeatherState weather
     {
         get
@@ -25,6 +26,7 @@ public class WorldStateManager : MonoBehaviour
             return instance == null ? WeatherState.Clear : instance.currentWeather;
         }
     }
+    */
     public static float happiness
     {
         get
@@ -33,6 +35,13 @@ public class WorldStateManager : MonoBehaviour
         }
         private set { }
     }
+
+    [SerializeField]
+    public List<GameObject> weathers;
+
+    public int i = 0;
+
+    private GameObject currentWeather;
 
     private void Awake()
     {
@@ -48,7 +57,7 @@ public class WorldStateManager : MonoBehaviour
 
     void Start()
     {
-        this.currentWeather = WeatherState.Clear;
+        this.currentWeather = weathers[i];
         this.currentTownHappiness = 0;
     }
 
@@ -66,11 +75,11 @@ public class WorldStateManager : MonoBehaviour
 
     private void IncrementWeather()
     {
-        this.currentWeather++;
-        if ((int)this.currentWeather >= weatherStateCount)
-        {
-            this.currentWeather = 0;
-        }
+        currentWeather.SetActive(false);
+        i = (i + 1) % weathers.Count;
+        currentWeather = weathers[i];
+        currentWeather.SetActive(true);
+
     }
     
     private void IncrementHappiness()
