@@ -76,8 +76,10 @@ public class WorldStateManager : MonoBehaviour
     private void IncrementWeather()
     {
         currentWeather.SetActive(false);
-        i = (i + 1) % weathers.Count;
+        i = (i + 1) % (weathers.Count);
+        Debug.Log(i);
         currentWeather = weathers[i];
+
         currentWeather.SetActive(true);
 
     }
