@@ -77,7 +77,7 @@ public class WorldStateManager : MonoBehaviour
     {
         currentWeather.SetActive(false);
         i = (i + 1) % (weathers.Count);
-        
+        Debug.Log(i);
         currentWeather = weathers[i];
 
         currentWeather.SetActive(true);
